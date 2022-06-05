@@ -1,55 +1,35 @@
 #include <iostream>
-#include <vector>
 
-template<typename iterator>
-void bst_sort(iterator begin, iterator end)
+template <typename iterator>
+void bubbl_sort(iterator begin, iterator end)
 {
-    if (begin == end) {
-    return;
+    bool true_ = true;
+    for(iterator i = begin; i != end; ++i) {
+    for(iterator j = begin; j < i; ++j) {
+    if (*i < *j) {
+    true_ = false;
+    std::swap(*i, *j);
     }
-    for (auto i = begin + 1; i != end; ++i){
-    auto value = *i;
-    if (value < *begin) {
-    std::copy_backward(begin, i, i + 1);
-    *begin = value;
-    } else {
-    auto next = i;
-    --next;
-    while (value < *next) {
-    *i = *next;
-    i = next;
-    --next;
     }
-    *i = value;
-    }
+    if(true_) {return;}
     }
 }
 template <typename T>
-void sort(T* arr, int size)
+void sort(T* arr,int size)
 {
-    for (int i = 1; i < size; ++i) {
-    int value = arr[i];
-    int j = i - 1;
-    while (value < arr[j] && j >= 0) {
-    arr[j + 1] = arr[j];
-    --j;
+    for(int i = 0; i < size; ++i) {
+    int j = i;
+    while(j < size){
+    if(arr[j] > arr[j+1]) {
+    T my_swap = arr[j];
+    arr[j] = arr[j+1];
+    arr[j+1] = my_swap;
     }
-    arr[j + 1] = value;
+    ++j;
+    }
     }
 }
 int main()
 {
-   /* std::vector<int> i = {15,7,9,20,2};
-    bst_sort(i.begin(),i.end());
-    for(auto t : i)
-    std::cout << t << " ";
-    std::cout << std::endl;
-    int arr[] = {15,7,9,20,2};
-    int size = (sizeof(arr) / sizeof(arr[0]));
-    sort(arr,size);
-    for(int i = 0;i < size ;++i) {
-    std::cout << arr[i] << " ";
-    }
-    return 0;*/
+    return 0;
 }
-
