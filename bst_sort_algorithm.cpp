@@ -1,25 +1,26 @@
-#include <iostream>
-
 template <typename iterator>
-void bubble_sort(iterator begin, iterator end) // with iterators
+void bubble_sort(iterator begin, iterator end)
 {
-    bool true_ = true;
+    iterator it = --end;
     for(iterator i = begin ; i != end; ++i) {
-        for(iterator j = begin; j < end; ++j) {
-            if (*i < *j) {
-                true_ = false;
-                std::swap(*i, *j);
+        bool _true = true;
+        for(iterator j = begin; j != it; ++j) {
+            iterator tmp = j;
+            ++tmp;
+            if (*j > *tmp ){
+                _true = false;
+                std::swap(*j, *tmp);
             }
         }
-        if(true_) {return;}
+        if(_true) {return;}
     }
 }
 template <typename T>
-void bubble_sort(T* arr,int size) // implemented for a simple array
+void bubble_sort(T* arr,int size)
 {
-    bool _true = true;
     for(int i = 0; i < size; ++i) {
-        for(int j = 0;j < size;++j) {
+    bool _true = true;
+        for(int j = 0;j < size - 1; ++j) {
             if(arr[j] > arr[j+1]) {
                 std::swap(arr[j],arr[j+1]);
                 _true = false;
