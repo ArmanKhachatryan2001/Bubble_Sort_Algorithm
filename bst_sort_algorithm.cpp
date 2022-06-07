@@ -1,7 +1,7 @@
 #include <iostream>
 
 template <typename iterator>
-void bubble_sort(iterator begin, iterator end)
+void bubble_sort(iterator begin, iterator end) // with iterators
 {
     bool true_ = true;
     for(iterator i = begin ; i != end; ++i) {
@@ -15,7 +15,7 @@ void bubble_sort(iterator begin, iterator end)
     }
 }
 template <typename T>
-void bubble_sort(T* arr,int size)
+void bubble_sort(T* arr,int size) // implemented for a simple array
 {
     bool _true = true;
     for(int i = 0; i < size; ++i) {
