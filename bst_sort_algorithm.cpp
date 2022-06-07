@@ -1,4 +1,3 @@
-template <typename iterator>
 void bubble_sort(iterator begin, iterator end)
 {
     iterator it = --end;
