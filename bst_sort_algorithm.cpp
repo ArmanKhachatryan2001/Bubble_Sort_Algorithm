@@ -30,6 +30,3 @@ void bubble_sort(T* arr,int size) // implemented for a simple array
         }
     }
 }
-int main()
-{
-}
