@@ -15,7 +15,7 @@ void bubble_sort(iterator begin, iterator end)
     }
 }
 template <typename T>
-void sort(T* arr,int size)
+void bubble_sort(T* arr,int size)
 {
     bool _true = true;
     for(int i = 0; i < size; ++i) {
@@ -32,5 +32,4 @@ void sort(T* arr,int size)
 }
 int main()
 {
-
 }
